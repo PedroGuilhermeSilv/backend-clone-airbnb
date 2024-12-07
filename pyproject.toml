@@ -1,0 +1,90 @@
+[project]
+name = "api-python"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "guilherme", email = "vinespedro55@gmail.com"},
+]
+dependencies = [
+    "pylint>=3.0.3",
+    "ruff>=0.4.6",
+    "django>=5.0.6",
+    "psycopg2-binary>=2.9.9",
+    "Pillow>=10.3.0",
+    "djangorestframework>=3.15.1",
+    "djangorestframework-simplejwt>=5.3.1",
+    "django-allauth>=0.63.3",
+    "django-cors-headers>=4.3.1",
+    "channels>=4.1.0",
+    "dj-rest-auth>=6.0.0",
+    "python-dotenv>=1.0.1",
+    "requests>=2.32.3",
+    "daphne>=4.1.2",
+    "google-auth>=2.30.0",
+    "google-auth-oauthlib>=1.2.0",
+    "google-api-python-client>=2.134.0",
+    "PyJWT>=2.8.0",
+    "celery>=5.4.0",
+    "redis>=5.0.7",
+    "python-jose>=3.3.0",
+    "resend>=2.2.0",
+    "boto3>=1.35.74",
+    "django-storages>=1.14.4",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
+
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pylint>=3.0.3",
+    "autopep8>=2.0.4",
+    "pytest>=8.0.1",
+]
+
+
+[tool.ruff]
+src = ["api"]
+line-length = 88
+
+exclude = ["*/migrations/*"]
+
+select = [
+    "F",   # Pyflakes
+    "E",   # pycodestyle - Errors
+    "W",   # pycodestyle - Warnings
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "YTT", # flake8-2020
+    "S",   # flake8-bandit
+    "COM", # flake8-commas
+    "C4",  # flake8-comprehensions
+    "DTZ", # flake8-datetimez
+    "EM",  # flake8-errmsg
+    "EXE", # flake8-executable
+    "FA",  # flake8-future-annotations
+    "ISC", # flake8-implicit-str-concat
+    "ICN", # flake8-import-conventions
+    "G",   # flake8-logging-format
+    "INP", # flake8-no-pep420
+    "PIE", # flake8-pie
+    "T20", # flake8-print
+    "PYI", # flake8-pyi
+    "Q",   # flake8-quotes
+    "RSE", # flake8-raise
+    "RET", # flake8-return
+    "SIM", # flake8-simplify
+    "INT", # flake8-gettext
+    "PL",  # Pylint
+]
+
+ignore = ["S107", "S106", "E501", "S311", "EXE002", "EM101" , "S101"]
